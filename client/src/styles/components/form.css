@@ -1,0 +1,222 @@
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: var(--primary-light);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.form-control::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #f3f4f6;
+  opacity: 1;
+}
+
+.form-control-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.form-control-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-check-label {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  appearance: none;
+}
+
+.form-select:focus {
+  border-color: var(--primary-light);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.form-select:disabled {
+  background-color: #f3f4f6;
+  opacity: 1;
+}
+
+.form-floating {
+  position: relative;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 0.75rem;
+}
+
+.form-floating > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+/* Validation states */
+.is-valid {
+  border-color: var(--success-color);
+}
+
+.is-valid:focus {
+  border-color: var(--success-color);
+  box-shadow: 0 0 0 0.2rem rgba(16, 185, 129, 0.25);
+}
+
+.is-invalid {
+  border-color: var(--danger-color);
+}
+
+.is-invalid:focus {
+  border-color: var(--danger-color);
+  box-shadow: 0 0 0 0.2rem rgba(239, 68, 68, 0.25);
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--danger-color);
+}
+
+.valid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--success-color);
+}
+
+/* Search form */
+.search-form {
+  display: flex;
+  max-width: 36rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0 0.375rem 0.375rem 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: var(--primary-dark);
+}

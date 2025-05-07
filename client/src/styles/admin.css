@@ -1,0 +1,149 @@
+/* Admin Dashboard Styles */
+.admin-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+
+.admin-header {
+  @apply mb-8;
+}
+
+.admin-title {
+  @apply text-3xl font-bold text-gray-900 mb-2;
+}
+
+.admin-subtitle {
+  @apply text-gray-600;
+}
+
+.admin-stats {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8;
+}
+
+.admin-stat-card {
+  @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+}
+
+.admin-stat-content {
+  @apply flex items-center;
+}
+
+.admin-stat-icon {
+  @apply h-12 w-12 rounded-full flex items-center justify-center mr-4;
+}
+
+.admin-stat-icon.blue {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.admin-stat-icon.green {
+  @apply bg-green-100 text-green-600;
+}
+
+.admin-stat-icon.purple {
+  @apply bg-purple-100 text-purple-600;
+}
+
+.admin-stat-icon.red {
+  @apply bg-red-100 text-red-600;
+}
+
+.admin-stat-info {
+  @apply flex-1;
+}
+
+.admin-stat-label {
+  @apply text-sm text-gray-600 mb-1;
+}
+
+.admin-stat-value {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.admin-nav-cards {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8;
+}
+
+.admin-nav-card {
+  @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1;
+}
+
+.admin-nav-content {
+  @apply flex items-start;
+}
+
+.admin-nav-icon {
+  @apply h-10 w-10 rounded-lg flex items-center justify-center mr-4;
+}
+
+.admin-nav-icon.blue {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.admin-nav-icon.green {
+  @apply bg-green-100 text-green-600;
+}
+
+.admin-nav-icon.purple {
+  @apply bg-purple-100 text-purple-600;
+}
+
+.admin-nav-icon.yellow {
+  @apply bg-yellow-100 text-yellow-600;
+}
+
+.admin-nav-info {
+  @apply flex-1;
+}
+
+.admin-nav-title {
+  @apply text-lg font-semibold text-gray-900 mb-1;
+}
+
+.admin-nav-description {
+  @apply text-sm text-gray-600;
+}
+
+/* Admin Table Styles */
+.admin-table-container {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.admin-table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.admin-table th {
+  @apply px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.admin-table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+.admin-table-actions {
+  @apply flex justify-end space-x-2;
+}
+
+.admin-table-action {
+  @apply p-2 rounded-md transition-colors duration-200;
+}
+
+.admin-table-action.edit {
+  @apply text-blue-600 hover:bg-blue-50;
+}
+
+.admin-table-action.delete {
+  @apply text-red-600 hover:bg-red-50;
+}
+
+.admin-table-pagination {
+  @apply px-6 py-4 bg-gray-50 border-t border-gray-200 flex items-center justify-between;
+}
+
+.admin-table-pagination-info {
+  @apply text-sm text-gray-700;
+}
+
+.admin-table-pagination-buttons {
+  @apply flex space-x-2;
+}

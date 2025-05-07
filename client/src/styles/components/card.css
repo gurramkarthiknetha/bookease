@@ -1,0 +1,243 @@
+/* Card styles */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.25rem);
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  background-color: #f9fafb;
+}
+
+/* Book card */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-card-image {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+.book-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-card-status {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.book-card-status.available {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.book-card-status.unavailable {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.book-card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-card-author {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.book-card-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.book-card-stars {
+  display: flex;
+  margin-right: 0.25rem;
+}
+
+.book-card-rating-value {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.book-card-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: auto;
+}
+
+.book-card-genre {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-radius: 9999px;
+}
+
+.book-card-genre-more {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background-color: #f3f4f6;
+  color: var(--text-light);
+  border-radius: 9999px;
+}
+
+/* Reservation card */
+.reservation-card {
+  border-left: 4px solid transparent;
+}
+
+.reservation-card.active {
+  border-left-color: var(--primary-color);
+}
+
+.reservation-card.pending {
+  border-left-color: var(--warning-color);
+}
+
+.reservation-card.completed {
+  border-left-color: var(--success-color);
+}
+
+.reservation-card.cancelled {
+  border-left-color: var(--text-light);
+}
+
+.reservation-card.overdue {
+  border-left-color: var(--danger-color);
+}
+
+/* Review card */
+.review-card {
+  margin-bottom: 1.5rem;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.review-card-user {
+  display: flex;
+  align-items: center;
+}
+
+.review-card-avatar {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 9999px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  margin-right: 0.75rem;
+}
+
+.review-card-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card-username {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.review-card-date {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.review-card-rating {
+  display: flex;
+}
+
+.review-card-content {
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.review-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.review-card-likes {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.review-card-likes-icon {
+  margin-right: 0.25rem;
+}
+
+.review-card-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

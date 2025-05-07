@@ -1,0 +1,122 @@
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.pagination-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-item {
+  margin: 0 0.25rem;
+}
+
+.pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.pagination-link:hover {
+  background-color: #f3f4f6;
+}
+
+.pagination-link.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.pagination-link.disabled {
+  color: #9ca3af;
+  pointer-events: none;
+  background-color: #f3f4f6;
+}
+
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  color: var(--text-light);
+}
+
+.pagination-prev,
+.pagination-next {
+  font-weight: 500;
+}
+
+.pagination-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+/* Pagination sizes */
+.pagination-sm .pagination-link {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.pagination-lg .pagination-link {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+/* Simple pagination */
+.pagination-simple {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-simple-prev,
+.pagination-simple-next {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.pagination-simple-prev:hover,
+.pagination-simple-next:hover {
+  background-color: #f3f4f6;
+}
+
+.pagination-simple-prev.disabled,
+.pagination-simple-next.disabled {
+  color: #9ca3af;
+  pointer-events: none;
+  background-color: #f3f4f6;
+}
+
+.pagination-simple-text {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}

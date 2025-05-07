@@ -1,0 +1,227 @@
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 28rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+.modal-sm {
+  max-width: 20rem;
+}
+
+.modal-lg {
+  max-width: 36rem;
+}
+
+.modal-xl {
+  max-width: 48rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+}
+
+.modal-close:hover {
+  color: var(--text-dark);
+  background-color: #f3f4f6;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  gap: 0.5rem;
+}
+
+/* Modal animations */
+.modal-enter {
+  transform: translateY(-1rem);
+  opacity: 0;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.modal-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-exit-active {
+  transform: translateY(-1rem);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Confirm dialog */
+.confirm-dialog-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 9999px;
+  margin-right: 1rem;
+}
+
+.confirm-dialog-icon.danger {
+  background-color: #fee2e2;
+  color: var(--danger-color);
+}
+
+.confirm-dialog-icon.warning {
+  background-color: #fef3c7;
+  color: var(--warning-color);
+}
+
+.confirm-dialog-icon.info {
+  background-color: #dbeafe;
+  color: var(--info-color);
+}
+
+.confirm-dialog-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.confirm-dialog-text {
+  flex: 1;
+}
+
+.confirm-dialog-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.confirm-dialog-message {
+  color: var(--text-light);
+}
+
+/* Slide-over panel */
+.slide-over {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 24rem;
+  background-color: white;
+  box-shadow: -10px 0 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.slide-over.open {
+  transform: translateX(0);
+}
+
+.slide-over-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.slide-over-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.slide-over-body {
+  padding: 1.5rem;
+  height: calc(100% - 4.5rem);
+  overflow-y: auto;
+}
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 20rem;
+  background-color: white;
+  box-shadow: 10px 0 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.drawer-body {
+  padding: 1.5rem;
+  height: calc(100% - 4.5rem);
+  overflow-y: auto;
+}

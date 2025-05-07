@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Connection Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>API Connection Test</h1>
+  <div>
+    <button id="testBooks">Test Books API</button>
+    <button id="testAuth">Test Auth API</button>
+  </div>
+  <div id="result">
+    <p>Click a button to test the API connection</p>
+  </div>
+
+  <script>
+    document.getElementById('testBooks').addEventListener('click', async () => {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<p>Testing connection to Books API...</p>';
+
+      try {
+        const response = await fetch('http://localhost:5001/api/books?limit=5', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        const data = await response.json();
+        resultDiv.innerHTML = `
+          <p class="success">✅ Connection to Books API successful!</p>
+          <p>Response:</p>
+          <pre>${JSON.stringify(data, null, 2)}</pre>
+        `;
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <p class="error">❌ Connection to Books API failed!</p>
+          <p>Error:</p>
+          <pre>${error.message}</pre>
+        `;
+      }
+    });
+
+    document.getElementById('testAuth').addEventListener('click', async () => {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<p>Testing connection to Auth API...</p>';
+
+      try {
+        const response = await fetch('http://localhost:5001/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: 'test@example.com',
+            password: 'password123'
+          })
+        });
+
+        const data = await response.json();
+        resultDiv.innerHTML = `
+          <p class="success">✅ Connection to Auth API successful!</p>
+          <p>Response:</p>
+          <pre>${JSON.stringify(data, null, 2)}</pre>
+        `;
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <p class="error">❌ Connection to Auth API failed!</p>
+          <p>Error:</p>
+          <pre>${error.message}</pre>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

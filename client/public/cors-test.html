@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORS Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>CORS Test</h1>
+  <button id="testButton">Test API Connection</button>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('testButton').addEventListener('click', async () => {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<p>Testing connection...</p>';
+
+      try {
+        const response = await fetch('http://localhost:5000/api/books?featured=true&limit=4', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include'
+        });
+
+        const data = await response.json();
+        resultDiv.innerHTML = `
+          <p style="color: green">✅ Connection successful!</p>
+          <p>Response:</p>
+          <pre>${JSON.stringify(data, null, 2)}</pre>
+        `;
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <p style="color: red">❌ Connection failed!</p>
+          <p>Error:</p>
+          <pre>${error.message}</pre>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
